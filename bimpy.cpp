@@ -87,7 +87,7 @@ void Context::Init(int width, int height, const std::string& name)
 
 		ImGui_ImplGlfw_InitForOpenGL(m_window, false);
 		ImGui_ImplOpenGL3_Init(glsl_version);
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClearColor(0.1f, 0.1f, 0.1f, 0.f);
 
 		m_width = width;
 		m_height = height;
