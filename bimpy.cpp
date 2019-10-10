@@ -65,6 +65,7 @@ void Context::Init(int width, int height, const std::string& name)
 		const char* glsl_version = "#version 150";
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+		glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, 1);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.2+ only
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // Required on Mac
 #else
@@ -72,6 +73,7 @@ void Context::Init(int width, int height, const std::string& name)
 		const char* glsl_version = "#version 130";
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+		glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, 1);
 		//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.2+ only
 		//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // 3.0+ only
 #endif
@@ -89,7 +91,7 @@ void Context::Init(int width, int height, const std::string& name)
 
 		ImGui_ImplGlfw_InitForOpenGL(m_window, false);
 		ImGui_ImplOpenGL3_Init(glsl_version);
-		glClearColor(0.0f, 0.0f, 0.0f, 0.0000000000f);
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0000f);
 
 		m_width = width;
 		m_height = height;
