@@ -4,6 +4,7 @@
  */
 
 #define IMGUI_DEFINE_MATH_OPERATORS
+#define GLFW_TRANSPARENT_FRAMEBUFFER   0x0002000A
 #include "imgui.h"
 #include "imgui_internal.h"
 #include "imgui_impl_glfw.h"
