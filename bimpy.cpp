@@ -38,6 +38,9 @@ public:
 	void NewFrame();
 
 	void Render();
+	
+	void Show();
+	void Hide();
 
 	bool ShouldClose();
 
