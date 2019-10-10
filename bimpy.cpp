@@ -87,7 +87,7 @@ void Context::Init(int width, int height, const std::string& name)
 
 		ImGui_ImplGlfw_InitForOpenGL(m_window, false);
 		ImGui_ImplOpenGL3_Init(glsl_version);
-		glClearColor(0.1f, 0.1f, 0.1f, 0.1f);
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
 		m_width = width;
 		m_height = height;
@@ -155,7 +155,7 @@ void Context::Render()
 	ImGui::Render();
 	glfwMakeContextCurrent(m_window);
 	glViewport(0, 0, m_width, m_height);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	glfwSwapInterval(1);
 	glfwSwapBuffers(m_window);
