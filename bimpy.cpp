@@ -180,7 +180,6 @@ void Context::Hide()
 void Context::Show()
 {
 	glfwShowWindow(m_window);
-	glfwFocusWindow(m_window);
 }
 
 
