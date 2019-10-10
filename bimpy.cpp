@@ -5,6 +5,7 @@
 
 #define IMGUI_DEFINE_MATH_OPERATORS
 #define GLFW_TRANSPARENT_FRAMEBUFFER   0x0002000A
+#define GLFW_DECORATED   0x00020005
 #include "imgui.h"
 #include "imgui_internal.h"
 #include "imgui_impl_glfw.h"
@@ -81,8 +82,9 @@ void Context::Init(int width, int height, const std::string& name)
 		
 		
 		glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
+		glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
 		m_window = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
-
+		glfwSetWindowPos(m_window,0,0)
 		glfwMakeContextCurrent(m_window);
 
 		gl3wInit();
