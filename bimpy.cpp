@@ -539,8 +539,8 @@ PYBIND11_MODULE(_bimpy, m) {
 		.def("should_close", &Context::ShouldClose)
 		.def("width", &Context::GetWidth)
 		.def("height", &Context::GetHeight)
-		.def("show",Context::Show)
-		.def("hide",Context::Hide)
+		.def("show",&Context::Show)
+		.def("hide",&Context::Hide)
 		.def("__enter__", &Context::NewFrame)
 		.def("__exit__", [](Context& self, py::object, py::object, py::object)
 			{
