@@ -84,7 +84,7 @@ void Context::Init(int width, int height, const std::string& name)
 		glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
 		glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
 		m_window = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
-		glfwSetWindowPos(m_window,0,0)
+		glfwSetWindowPos(m_window,0,0);
 		glfwMakeContextCurrent(m_window);
 
 		gl3wInit();
@@ -168,6 +168,16 @@ void Context::Render()
 	glfwSwapBuffers(m_window);
 	glfwPollEvents();
 	m_imgui_ctx_mutex.unlock();
+}
+
+void Context::Hide()
+{
+	glfwHideWindow(m_window);
+}
+void Context::Show()
+{
+	glfwShowWindow(m_window);
+	glfwFocusWindow(m_window);
 }
 
 
